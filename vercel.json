@@ -4,7 +4,7 @@
     "api": {
       "root": ".",
       "framework": "express",
-      "entrypoint": "backend/src/server.js"
+      "entrypoint": "vercel-entry.js"
     }
   },
   "rewrites": [
