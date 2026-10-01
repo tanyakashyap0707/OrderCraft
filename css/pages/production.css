@@ -1,0 +1,24 @@
+/* ================= PRODUCTION PAGE ================= */
+.production-page {
+    display: none;
+}
+
+.mini-progress {
+    width: 100px;
+    height: 7px;
+    background: var(--border-subtle, #e5e7eb);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.mini-progress div {
+    height: 100%;
+    background: var(--primary-color, #111827);
+    border-radius: 10px;
+}
+
+.production-page small {
+    color: var(--text-muted, #8a94a6);
+    font-size: 11px;
+}

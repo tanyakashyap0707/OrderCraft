@@ -1,0 +1,168 @@
+<section class="payments-page" id="paymentsPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">FINANCE</p>
+            <h1>Payments</h1>
+            <p>Track customer payments and outstanding amounts.</p>
+        </div>
+
+        <button class="new-order" id="recordPaymentBtn">
+            + Record Payment
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL RECEIVED</p>
+            <h3>₹7.2 L</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING</p>
+            <h3>₹2.1 L</h3>
+            <span>Awaiting payment</span>
+        </div>
+
+        <div class="detail-card">
+            <p>OVERDUE</p>
+            <h3>₹65 K</h3>
+            <span>Needs attention</span>
+        </div>
+
+        <div class="detail-card">
+            <p>SUCCESS RATE</p>
+            <h3>94%</h3>
+            <span>On-time payments</span>
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Payment History</h2>
+                <p>Track invoices and customer payments</p>
+            </div>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>PAYMENT ID</th>
+                    <th>CUSTOMER</th>
+                    <th>INVOICE</th>
+                    <th>AMOUNT</th>
+                    <th>DATE</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>PAY-1001</td>
+                    <td>Tech Solutions</td>
+                    <td>INV-1002</td>
+                    <td>₹86,500</td>
+                    <td>28 Sep 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Paid
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PAY-1002</td>
+                    <td>ABC Industries</td>
+                    <td>INV-1001</td>
+                    <td>₹1,18,000</td>
+                    <td>—</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PAY-1003</td>
+                    <td>Global Furniture</td>
+                    <td>INV-0998</td>
+                    <td>₹65,000</td>
+                    <td>20 Sep 2026</td>
+                    <td>
+                        <span class="status overdue-status">
+                            Overdue
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- OUTSTANDING -->
+
+    <div class="panel payment-overview">
+
+        <div class="panel-header">
+            <div>
+                <h2>Outstanding Payments</h2>
+                <p>Customers with pending balances</p>
+            </div>
+        </div>
+
+        <div class="payment-row">
+
+            <div>
+                <strong>ABC Industries</strong>
+                <p>Invoice INV-1001</p>
+            </div>
+
+            <strong>₹1,18,000</strong>
+
+            <span class="status pending-status">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div>
+                <strong>Global Furniture</strong>
+                <p>Invoice INV-0998</p>
+            </div>
+
+            <strong>₹65,000</strong>
+
+            <span class="status overdue-status">
+                Overdue
+            </span>
+
+        </div>
+
+    </div>
+
+</section>

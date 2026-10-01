@@ -1,0 +1,28 @@
+/* ================= TABLES ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 10px;
+    color: var(--text-muted, #8a94a6);
+    padding: 12px;
+    border-bottom: 1px solid var(--border-subtle, #e5e7eb);
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 15px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--bg-muted, #eef0f3);
+}
+
+tbody tr {
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}

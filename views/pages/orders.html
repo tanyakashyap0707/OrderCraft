@@ -1,0 +1,136 @@
+<section class="orders-page" id="ordersPage">
+
+
+            <div class="page-heading">
+
+                <div>
+                    <p class="small-text">OPERATIONS</p>
+
+                    <h1>Orders</h1>
+
+                    <p>
+                        Manage customer manufacturing orders.
+                    </p>
+                </div>
+
+
+                <button class="new-order" id="createOrderBtn">
+                    + Create Order
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="order-tools">
+
+                <input
+                    type="text"
+                    id="searchOrder"
+                    placeholder="Search order or customer..."
+                >
+
+
+                <select id="statusFilter">
+
+                    <option value="All">
+                        All Status
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="In Production">
+                        In Production
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ORDERS TABLE -->
+
+            <div class="panel">
+
+                <table id="ordersTable">
+
+                    <thead>
+
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>CUSTOMER</th>
+                            <th>PRODUCT</th>
+                            <th>QUANTITY</th>
+                            <th>DATE</th>
+                            <th>STATUS</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>ORD-1042</td>
+                            <td>ABC Industries</td>
+                            <td>Office Chair</td>
+                            <td>100</td>
+                            <td>29 Sep 2026</td>
+
+                            <td>
+                                <span class="status production-status">
+                                    In Production
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>ORD-1041</td>
+                            <td>XYZ Ltd</td>
+                            <td>Wooden Desk</td>
+                            <td>50</td>
+                            <td>28 Sep 2026</td>
+
+                            <td>
+                                <span class="status completed-status">
+                                    Completed
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>ORD-1040</td>
+                            <td>PQR Corp</td>
+                            <td>Storage Cabinet</td>
+                            <td>25</td>
+                            <td>27 Sep 2026</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>

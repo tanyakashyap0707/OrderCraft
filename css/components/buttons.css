@@ -1,0 +1,46 @@
+/* ================= BUTTONS ================= */
+.new-order {
+    border: none;
+    background: var(--primary-color, #111827);
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-md, 8px);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.new-order:hover {
+    background: var(--primary-hover, #273449);
+}
+
+.new-order:active {
+    transform: translateY(1px);
+}
+
+.purchase-btn {
+    border: none;
+    background: var(--primary-color, #111827);
+    color: white;
+    padding: 8px 13px;
+    border-radius: var(--border-radius-sm, 7px);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+}
+
+.purchase-btn:hover {
+    opacity: 0.85;
+}
+
+.purchase-btn.disabled {
+    background: var(--border-subtle, #e5e7eb);
+    color: #6b7280;
+    cursor: default;
+}
+
+.purchase-btn.disabled:hover {
+    opacity: 1;
+}

@@ -1,0 +1,119 @@
+<section class="procurement-page" id="procurementPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">PROCUREMENT</p>
+            <h1>Purchase Orders</h1>
+            <p>Manage material purchases and supplier deliveries.</p>
+        </div>
+
+        <button class="new-order" id="createPOBtn">
+            + Create Purchase Order
+        </button>
+
+    </div>
+
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>OPEN ORDERS</p>
+            <h3>08</h3>
+            <span>Currently active</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING DELIVERY</p>
+            <h3>05</h3>
+            <span>Awaiting materials</span>
+        </div>
+
+        <div class="detail-card">
+            <p>RECEIVED</p>
+            <h3>12</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PURCHASE VALUE</p>
+            <h3>₹4.8 L</h3>
+            <span>This month</span>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Purchase Orders</h2>
+                <p>Track supplier orders and material deliveries</p>
+            </div>
+
+        </div>
+
+
+        <table id="purchaseTable">
+
+            <thead>
+                <tr>
+                    <th>PO ID</th>
+                    <th>MATERIAL</th>
+                    <th>SUPPLIER</th>
+                    <th>QUANTITY</th>
+                    <th>EXPECTED</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>PO-1001</td>
+                    <td>Steel Sheet</td>
+                    <td>Metro Metals</td>
+                    <td>100 kg</td>
+                    <td>02 Oct 2026</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PO-1002</td>
+                    <td>Paint</td>
+                    <td>ColorTech Supplies</td>
+                    <td>50 L</td>
+                    <td>01 Oct 2026</td>
+                    <td>
+                        <span class="status production-status">
+                            In Transit
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PO-1003</td>
+                    <td>Fabric</td>
+                    <td>Textile Hub</td>
+                    <td>300 m</td>
+                    <td>28 Sep 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Received
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>

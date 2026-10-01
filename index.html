@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderCraft - Manufacturing Operations Platform</title>
+
+    <!-- Master Modular Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>◈</span>
+            OrderCraft
+        </div>
+
+        <p class="menu-title">OVERVIEW</p>
+
+        <nav>
+            <a href="#" id="dashboardLink" class="active">Dashboard</a>
+        </nav>
+
+
+        <p class="menu-title">OPERATIONS</p>
+
+        <nav>
+            <a href="#" id="ordersLink">Orders</a>
+            <a href="#" id="productionLink">Planning</a>
+            <a href="#" id="bomLink">BOM</a>
+            <a href="#" id="inventoryLink">Materials</a>
+            <a href="#" id="procurementLink">Procurement</a>
+        </nav>
+
+
+        <p class="menu-title">BUSINESS</p>
+
+        <nav>
+            <a href="#" id="suppliersLink">Suppliers</a>
+        </nav>
+
+
+        <p class="menu-title">FINANCE</p>
+
+        <nav>
+            <a href="#" id="invoiceLink">Invoices</a>
+            <a href="#" id="paymentsLink">Payments</a>
+        </nav>
+
+
+        <p class="menu-title">INSIGHTS</p>
+
+        <nav>
+            <a href="#" id="analyticsLink">Analytics</a>
+        </nav>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="search">
+                🔍 Search anything...
+            </div>
+
+            <div class="profile">
+                🔔
+                <span>Aditi</span>
+                ◉
+            </div>
+
+        </header>
+
+        <!-- ================= PAGES ================= -->
+        <section id="dashboardPage">
+
+            <!-- WELCOME -->
+
+            <section class="welcome">
+
+                <div>
+                    <p class="small-text">OVERVIEW</p>
+
+                    <h1>Good morning, Aditi 👋</h1>
+
+                    <p>
+                        Here's what's happening with your operations today.
+                    </p>
+                </div>
+
+                <button class="new-order" id="dashboardNewOrder">
+                    + New Order
+                </button>
+
+            </section>
+
+
+            <!-- KPI CARDS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <p>ACTIVE ORDERS</p>
+                    <h2>24</h2>
+                    <span>↑ 12% this month</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>IN PRODUCTION</p>
+                    <h2>12</h2>
+                    <span>8 on schedule</span>
+                </div>
+
+                <div class="stat-card warning">
+                    <p>MATERIAL ALERTS</p>
+                    <h2>06</h2>
+                    <span>Requires attention</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>PENDING PAYMENTS</p>
+                    <h2>₹2.4L</h2>
+                    <span>14 invoices</span>
+                </div>
+
+            </section>
+
+
+            <!-- DASHBOARD GRID -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- PRODUCTION -->
+
+                <div class="panel production">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Production Overview</h2>
+                            <p>Current manufacturing activity</p>
+                        </div>
+
+                        <select>
+                            <option>This Month</option>
+                            <option>This Week</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:45%;"></div>
+                            <span>Jan</span>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:65%;"></div>
+                            <span>Feb</span>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:80%;"></div>
+                            <span>Mar</span>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:55%;"></div>
+                            <span>Apr</span>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:90%;"></div>
+                            <span>May</span>
+                        </div>
+
+                        <div class="bar">
+                            <div class="bar-fill" style="height:70%;"></div>
+                            <span>Jun</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATERIAL ALERTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Material Alerts</h2>
+                            <p>Items requiring attention</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-item">
+                        <span>⚠</span>
+
+                        <div>
+                            <strong>Steel Sheets</strong>
+                            <p>40 kg shortage</p>
+                        </div>
+                    </div>
+
+
+                    <div class="alert-item">
+                        <span>⚠</span>
+
+                        <div>
+                            <strong>Paint</strong>
+                            <p>8 L shortage</p>
+                        </div>
+                    </div>
+
+
+                    <div class="alert-item safe">
+                        <span>✓</span>
+
+                        <div>
+                            <strong>Wood</strong>
+                            <p>Stock sufficient</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT ORDERS -->
+
+            <section class="panel recent-orders">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Recent Orders</h2>
+                        <p>Latest manufacturing orders</p>
+                    </div>
+
+                    <a href="#" id="viewOrders">View all →</a>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>CUSTOMER</th>
+                            <th>PRODUCT</th>
+                            <th>QTY</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>ORD-1042</td>
+                            <td>ABC Industries</td>
+                            <td>Office Chair</td>
+                            <td>100</td>
+
+                            <td>
+                                <span class="status production-status">
+                                    In Production
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>ORD-1041</td>
+                            <td>XYZ Ltd</td>
+                            <td>Wooden Desk</td>
+                            <td>50</td>
+
+                            <td>
+                                <span class="status completed-status">
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>ORD-1040</td>
+                            <td>PQR Corp</td>
+                            <td>Storage Cabinet</td>
+                            <td>25</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </section>
+
+        <section class="orders-page" id="ordersPage">
+
+
+            <div class="page-heading">
+
+                <div>
+                    <p class="small-text">OPERATIONS</p>
+
+                    <h1>Orders</h1>
+
+                    <p>
+                        Manage customer manufacturing orders.
+                    </p>
+                </div>
+
+
+                <button class="new-order" id="createOrderBtn">
+                    + Create Order
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="order-tools">
+
+                <input
+                    type="text"
+                    id="searchOrder"
+                    placeholder="Search order or customer..."
+                >
+
+
+                <select id="statusFilter">
+
+                    <option value="All">
+                        All Status
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="In Production">
+                        In Production
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ORDERS TABLE -->
+
+            <div class="panel">
+
+                <table id="ordersTable">
+
+                    <thead>
+
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>CUSTOMER</th>
+                            <th>PRODUCT</th>
+                            <th>QUANTITY</th>
+                            <th>DATE</th>
+                            <th>STATUS</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>ORD-1042</td>
+                            <td>ABC Industries</td>
+                            <td>Office Chair</td>
+                            <td>100</td>
+                            <td>29 Sep 2026</td>
+
+                            <td>
+                                <span class="status production-status">
+                                    In Production
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>ORD-1041</td>
+                            <td>XYZ Ltd</td>
+                            <td>Wooden Desk</td>
+                            <td>50</td>
+                            <td>28 Sep 2026</td>
+
+                            <td>
+                                <span class="status completed-status">
+                                    Completed
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>ORD-1040</td>
+                            <td>PQR Corp</td>
+                            <td>Storage Cabinet</td>
+                            <td>25</td>
+                            <td>27 Sep 2026</td>
+
+                            <td>
+                                <span class="status pending-status">
+                                    Pending
+                                </span>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="order-details-page" id="orderDetailsPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">ORDER MANAGEMENT</p>
+            <h1>Order ORD-1042</h1>
+            <p>Complete manufacturing and payment overview</p>
+        </div>
+
+        <span class="status production-status">
+            In Production
+        </span>
+
+    </div>
+
+
+    <!-- ORDER INFO -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>CUSTOMER</p>
+            <h3>ABC Industries</h3>
+            <span>Corporate Customer</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PRODUCT</p>
+            <h3>Office Chair</h3>
+            <span>Quantity: 100</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ORDER VALUE</p>
+            <h3>₹1,18,000</h3>
+            <span>Including GST</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ORDER DATE</p>
+            <h3>29 Sep 2026</h3>
+            <span>Expected: 05 Oct 2026</span>
+        </div>
+
+    </div>
+
+
+    <!-- ORDER TRACKING -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Order Tracking</h2>
+                <p>Track the complete manufacturing workflow</p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>Order Received</strong>
+                    <p>Customer order successfully created</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>BOM Generated</strong>
+                    <p>Bill of materials prepared</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>Materials Checked</strong>
+                    <p>Inventory availability verified</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item current">
+                <div class="timeline-dot">●</div>
+
+                <div>
+                    <strong>Production</strong>
+                    <p>Manufacturing is currently in progress</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot">○</div>
+
+                <div>
+                    <strong>Invoice</strong>
+                    <p>Invoice will be generated after production</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot">○</div>
+
+                <div>
+                    <strong>Payment</strong>
+                    <p>Payment pending</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MATERIAL + PRODUCTION -->
+
+    <div class="detail-grid">
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Material Status</h2>
+                    <p>Required vs available inventory</p>
+                </div>
+            </div>
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>MATERIAL</th>
+                        <th>REQUIRED</th>
+                        <th>AVAILABLE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Steel Sheet</td>
+                        <td>200 kg</td>
+                        <td>200 kg</td>
+                        <td>
+                            <span class="status completed-status">
+                                Available
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Foam</td>
+                        <td>150 kg</td>
+                        <td>150 kg</td>
+                        <td>
+                            <span class="status completed-status">
+                                Available
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Paint</td>
+                        <td>30 L</td>
+                        <td>20 L</td>
+                        <td>
+                            <span class="status pending-status">
+                                Shortage
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PRODUCTION -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Production</h2>
+                    <p>Current manufacturing progress</p>
+                </div>
+
+            </div>
+
+            <h1>80%</h1>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <p class="progress-text">
+                80 of 100 units completed
+            </p>
+
+            <span class="status production-status">
+                In Production
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- INVOICE -->
+
+    <div class="panel invoice-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Invoice</h2>
+                <p>Generate and manage customer billing</p>
+            </div>
+
+            <button class="new-order" id="generateInvoiceBtn">
+                Generate Invoice
+            </button>
+
+        </div>
+
+
+        <div class="invoice-summary">
+
+            <div>
+                <span>Subtotal</span>
+                <strong>₹1,00,000</strong>
+            </div>
+
+            <div>
+                <span>GST (18%)</span>
+                <strong>₹18,000</strong>
+            </div>
+
+            <div class="invoice-total">
+                <span>Total</span>
+                <strong>₹1,18,000</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT -->
+
+    <div class="panel payment-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Payment Tracking</h2>
+                <p>Monitor customer payment status</p>
+            </div>
+
+            <span class="status pending-status">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="payment-info">
+
+            <div>
+                <p>TOTAL AMOUNT</p>
+                <h2>₹1,18,000</h2>
+            </div>
+
+            <div>
+                <p>PAID</p>
+                <h2>₹0</h2>
+            </div>
+
+            <div>
+                <p>REMAINING</p>
+                <h2>₹1,18,000</h2>
+            </div>
+
+        </div>
+
+
+        <button class="new-order" id="markPaidBtn">
+            Mark as Paid
+        </button>
+
+    </div>
+
+</section>
+
+        <section class="bom-page" id="bomPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">MANUFACTURING</p>
+
+            <h1>Bill of Materials</h1>
+
+            <p>
+                Define materials required to manufacture each product.
+            </p>
+        </div>
+
+        <button class="new-order" id="createBomBtn">
+            + Create BOM
+        </button>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Product BOMs</h2>
+                <p>Materials required for production</p>
+            </div>
+
+        </div>
+
+
+        <table id="bomTable">
+
+            <thead>
+                <tr>
+                    <th>BOM ID</th>
+                    <th>PRODUCT</th>
+                    <th>MATERIALS</th>
+                    <th>VERSION</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>BOM-001</td>
+                    <td>Office Chair</td>
+                    <td>4 Materials</td>
+                    <td>v1.0</td>
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>BOM-002</td>
+                    <td>Wooden Desk</td>
+                    <td>5 Materials</td>
+                    <td>v1.2</td>
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>BOM-003</td>
+                    <td>Storage Cabinet</td>
+                    <td>6 Materials</td>
+                    <td>v1.0</td>
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <section class="inventory-page" id="inventoryPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">MATERIAL MANAGEMENT</p>
+            <h1>Materials & Inventory</h1>
+            <p>Monitor raw materials required for manufacturing.</p>
+        </div>
+
+        <button class="new-order" id="openMaterialModalBtn">
+        + Add Material
+        </button>
+
+    </div>
+
+
+    <!-- INVENTORY SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL MATERIALS</p>
+            <h3>24</h3>
+            <span>Active materials</span>
+        </div>
+
+        <div class="detail-card">
+            <p>LOW STOCK</p>
+            <h3>5</h3>
+            <span>Needs attention</span>
+        </div>
+
+        <div class="detail-card">
+            <p>SHORTAGE</p>
+            <h3>3</h3>
+            <span>Purchase required</span>
+        </div>
+
+        <div class="detail-card">
+            <p>INVENTORY VALUE</p>
+            <h3>₹8.4 L</h3>
+            <span>Current stock value</span>
+        </div>
+
+    </div>
+
+
+    <!-- MATERIAL TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Raw Materials</h2>
+                <p>Current inventory and manufacturing requirements</p>
+            </div>
+
+        </div>
+
+
+        <table id="inventoryTable">
+
+            <thead>
+
+                <tr>
+                    <th>MATERIAL</th>
+                    <th>UNIT</th>
+                    <th>AVAILABLE</th>
+                    <th>REQUIRED</th>
+                    <th>SHORTAGE</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>Steel Sheet</td>
+                    <td>kg</td>
+                    <td>150</td>
+                    <td>200</td>
+                    <td>50</td>
+
+                    <td>
+                        <span class="status pending-status">
+                            Shortage
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn">
+                            Create PO
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Foam</td>
+                    <td>kg</td>
+                    <td>200</td>
+                    <td>150</td>
+                    <td>0</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Available
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn disabled">
+                            No Action
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Paint</td>
+                    <td>L</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>10</td>
+
+                    <td>
+                        <span class="status pending-status">
+                            Shortage
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn">
+                            Create PO
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Fabric</td>
+                    <td>m</td>
+                    <td>500</td>
+                    <td>400</td>
+                    <td>0</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Available
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn disabled">
+                            No Action
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <section class="procurement-page" id="procurementPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">PROCUREMENT</p>
+            <h1>Purchase Orders</h1>
+            <p>Manage material purchases and supplier deliveries.</p>
+        </div>
+
+        <button class="new-order" id="createPOBtn">
+            + Create Purchase Order
+        </button>
+
+    </div>
+
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>OPEN ORDERS</p>
+            <h3>08</h3>
+            <span>Currently active</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING DELIVERY</p>
+            <h3>05</h3>
+            <span>Awaiting materials</span>
+        </div>
+
+        <div class="detail-card">
+            <p>RECEIVED</p>
+            <h3>12</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PURCHASE VALUE</p>
+            <h3>₹4.8 L</h3>
+            <span>This month</span>
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Purchase Orders</h2>
+                <p>Track supplier orders and material deliveries</p>
+            </div>
+
+        </div>
+
+
+        <table id="purchaseTable">
+
+            <thead>
+                <tr>
+                    <th>PO ID</th>
+                    <th>MATERIAL</th>
+                    <th>SUPPLIER</th>
+                    <th>QUANTITY</th>
+                    <th>EXPECTED</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>PO-1001</td>
+                    <td>Steel Sheet</td>
+                    <td>Metro Metals</td>
+                    <td>100 kg</td>
+                    <td>02 Oct 2026</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PO-1002</td>
+                    <td>Paint</td>
+                    <td>ColorTech Supplies</td>
+                    <td>50 L</td>
+                    <td>01 Oct 2026</td>
+                    <td>
+                        <span class="status production-status">
+                            In Transit
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PO-1003</td>
+                    <td>Fabric</td>
+                    <td>Textile Hub</td>
+                    <td>300 m</td>
+                    <td>28 Sep 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Received
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <section class="production-page" id="productionPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">MANUFACTURING</p>
+            <h1>Production</h1>
+            <p>Track manufacturing orders and production progress.</p>
+        </div>
+
+        <button class="new-order" id="createProductionBtn">
+            + Start Production
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>ACTIVE JOBS</p>
+            <h3>06</h3>
+            <span>Currently in production</span>
+        </div>
+
+        <div class="detail-card">
+            <p>UNITS IN PRODUCTION</p>
+            <h3>480</h3>
+            <span>Across all jobs</span>
+        </div>
+
+        <div class="detail-card">
+            <p>COMPLETED</p>
+            <h3>32</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ON-TIME RATE</p>
+            <h3>94%</h3>
+            <span>Production efficiency</span>
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCTION TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Production Orders</h2>
+                <p>Monitor manufacturing progress</p>
+            </div>
+
+        </div>
+
+
+        <table id="productionTable">
+
+            <thead>
+                <tr>
+                    <th>JOB ID</th>
+                    <th>ORDER</th>
+                    <th>PRODUCT</th>
+                    <th>QUANTITY</th>
+                    <th>PROGRESS</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>JOB-001</td>
+                    <td>ORD-1042</td>
+                    <td>Office Chair</td>
+                    <td>100</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:80%"></div>
+                        </div>
+                        <small>80 / 100</small>
+                    </td>
+
+                    <td>
+                        <span class="status production-status">
+                            In Production
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>JOB-002</td>
+                    <td>ORD-1043</td>
+                    <td>Wooden Desk</td>
+                    <td>50</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:45%"></div>
+                        </div>
+                        <small>22 / 50</small>
+                    </td>
+
+                    <td>
+                        <span class="status production-status">
+                            In Production
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>JOB-003</td>
+                    <td>ORD-1038</td>
+                    <td>Storage Cabinet</td>
+                    <td>80</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:100%"></div>
+                        </div>
+                        <small>80 / 80</small>
+                    </td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Completed
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <section class="invoice-page" id="invoicePage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">FINANCE</p>
+            <h1>Invoices</h1>
+            <p>Create and manage customer invoices.</p>
+        </div>
+
+        <button class="new-order" id="createInvoiceBtn">
+            + Create Invoice
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL INVOICES</p>
+            <h3>48</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PAID</p>
+            <h3>₹7.2 L</h3>
+            <span>Collected</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING</p>
+            <h3>₹2.1 L</h3>
+            <span>Awaiting payment</span>
+        </div>
+
+        <div class="detail-card">
+            <p>OVERDUE</p>
+            <h3>₹65 K</h3>
+            <span>Needs attention</span>
+        </div>
+
+    </div>
+
+
+    <!-- INVOICE TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Customer Invoices</h2>
+                <p>Billing and payment overview</p>
+            </div>
+
+        </div>
+
+
+        <table id="invoiceTable">
+
+            <thead>
+                <tr>
+                    <th>INVOICE</th>
+                    <th>CUSTOMER</th>
+                    <th>ORDER</th>
+                    <th>AMOUNT</th>
+                    <th>DUE DATE</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>INV-1001</td>
+                    <td>ABC Industries</td>
+                    <td>ORD-1042</td>
+                    <td>₹1,18,000</td>
+                    <td>05 Oct 2026</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>INV-1002</td>
+                    <td>Tech Solutions</td>
+                    <td>ORD-1040</td>
+                    <td>₹86,500</td>
+                    <td>01 Oct 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Paid
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BILL PREVIEW -->
+
+    <div class="invoice-document" id="invoiceDocument">
+
+        <div class="invoice-top">
+
+            <div>
+                <p class="small-text">ORDERCRAFT</p>
+                <h2>Manufacturing Invoice</h2>
+            </div>
+
+            <div class="invoice-number">
+                <strong>INV-1042</strong>
+                <span>29 Sep 2026</span>
+            </div>
+
+        </div>
+
+
+        <div class="billing-info">
+
+            <div>
+                <p>BILL TO</p>
+                <h3>ABC Industries</h3>
+                <span>New Delhi, India</span>
+            </div>
+
+            <div>
+                <p>ORDER</p>
+                <h3>ORD-1042</h3>
+                <span>Office Chair × 100</span>
+            </div>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>QTY</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Office Chair</td>
+                    <td>100</td>
+                    <td>₹1,000</td>
+                    <td>₹1,00,000</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <div class="invoice-calculation">
+
+            <div>
+                <span>Subtotal</span>
+                <strong>₹1,00,000</strong>
+            </div>
+
+            <div>
+                <span>GST (18%)</span>
+                <strong>₹18,000</strong>
+            </div>
+
+            <div class="grand-total">
+                <span>Grand Total</span>
+                <strong>₹1,18,000</strong>
+            </div>
+
+        </div>
+
+
+        <div class="invoice-actions">
+
+            <button class="new-order" id="printInvoiceBtn">
+                Print / Download Invoice
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="payments-page" id="paymentsPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">FINANCE</p>
+            <h1>Payments</h1>
+            <p>Track customer payments and outstanding amounts.</p>
+        </div>
+
+        <button class="new-order" id="recordPaymentBtn">
+            + Record Payment
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL RECEIVED</p>
+            <h3>₹7.2 L</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING</p>
+            <h3>₹2.1 L</h3>
+            <span>Awaiting payment</span>
+        </div>
+
+        <div class="detail-card">
+            <p>OVERDUE</p>
+            <h3>₹65 K</h3>
+            <span>Needs attention</span>
+        </div>
+
+        <div class="detail-card">
+            <p>SUCCESS RATE</p>
+            <h3>94%</h3>
+            <span>On-time payments</span>
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Payment History</h2>
+                <p>Track invoices and customer payments</p>
+            </div>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>PAYMENT ID</th>
+                    <th>CUSTOMER</th>
+                    <th>INVOICE</th>
+                    <th>AMOUNT</th>
+                    <th>DATE</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>PAY-1001</td>
+                    <td>Tech Solutions</td>
+                    <td>INV-1002</td>
+                    <td>₹86,500</td>
+                    <td>28 Sep 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Paid
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PAY-1002</td>
+                    <td>ABC Industries</td>
+                    <td>INV-1001</td>
+                    <td>₹1,18,000</td>
+                    <td>—</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>PAY-1003</td>
+                    <td>Global Furniture</td>
+                    <td>INV-0998</td>
+                    <td>₹65,000</td>
+                    <td>20 Sep 2026</td>
+                    <td>
+                        <span class="status overdue-status">
+                            Overdue
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- OUTSTANDING -->
+
+    <div class="panel payment-overview">
+
+        <div class="panel-header">
+            <div>
+                <h2>Outstanding Payments</h2>
+                <p>Customers with pending balances</p>
+            </div>
+        </div>
+
+        <div class="payment-row">
+
+            <div>
+                <strong>ABC Industries</strong>
+                <p>Invoice INV-1001</p>
+            </div>
+
+            <strong>₹1,18,000</strong>
+
+            <span class="status pending-status">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div>
+                <strong>Global Furniture</strong>
+                <p>Invoice INV-0998</p>
+            </div>
+
+            <strong>₹65,000</strong>
+
+            <span class="status overdue-status">
+                Overdue
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="analytics-page" id="analyticsPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">INSIGHTS</p>
+            <h1>Analytics</h1>
+            <p>Business performance and manufacturing insights.</p>
+        </div>
+
+        <button class="new-order" id="refreshAnalyticsBtn">
+            ↻ Refresh Data
+        </button>
+
+    </div>
+
+
+    <!-- KPI CARDS -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL ORDERS</p>
+            <h3>128</h3>
+            <span>+12% this month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>REVENUE</p>
+            <h3>₹24.8 L</h3>
+            <span>+18% this month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PRODUCTION</p>
+            <h3>94%</h3>
+            <span>On-time completion</span>
+        </div>
+
+        <div class="detail-card">
+            <p>OUTSTANDING</p>
+            <h3>₹2.1 L</h3>
+            <span>Pending payments</span>
+        </div>
+
+    </div>
+
+
+    <!-- CHARTS -->
+
+    <div class="analytics-grid">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Monthly Orders</h2>
+                    <p>Order volume over the year</p>
+                </div>
+
+            </div>
+
+            <div class="bar-chart">
+
+                <div class="bar-item">
+                    <span>Jan</span>
+                    <div class="bar"><div style="height:45%"></div></div>
+                </div>
+
+                <div class="bar-item">
+                    <span>Feb</span>
+                    <div class="bar"><div style="height:60%"></div></div>
+                </div>
+
+                <div class="bar-item">
+                    <span>Mar</span>
+                    <div class="bar"><div style="height:52%"></div></div>
+                </div>
+
+                <div class="bar-item">
+                    <span>Apr</span>
+                    <div class="bar"><div style="height:75%"></div></div>
+                </div>
+
+                <div class="bar-item">
+                    <span>May</span>
+                    <div class="bar"><div style="height:68%"></div></div>
+                </div>
+
+                <div class="bar-item">
+                    <span>Jun</span>
+                    <div class="bar"><div style="height:88%"></div></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER STATUS -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Order Status</h2>
+                    <p>Current order distribution</p>
+                </div>
+
+            </div>
+
+
+            <div class="status-analysis">
+
+                <div class="analysis-row">
+                    <span>Completed</span>
+                    <strong>62%</strong>
+                </div>
+
+                <div class="analysis-line">
+                    <div style="width:62%"></div>
+                </div>
+
+
+                <div class="analysis-row">
+                    <span>In Production</span>
+                    <strong>24%</strong>
+                </div>
+
+                <div class="analysis-line">
+                    <div style="width:24%"></div>
+                </div>
+
+
+                <div class="analysis-row">
+                    <span>Pending</span>
+                    <strong>14%</strong>
+                </div>
+
+                <div class="analysis-line">
+                    <div style="width:14%"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUSINESS INSIGHTS -->
+
+    <div class="panel insights-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Business Insights</h2>
+                <p>Important operational observations</p>
+            </div>
+
+        </div>
+
+
+        <div class="insights-grid">
+
+            <div class="insight-box">
+                <span>⚡</span>
+                <div>
+                    <strong>Production Efficiency</strong>
+                    <p>
+                        94% of manufacturing orders are completed
+                        within the expected timeline.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="insight-box">
+                <span>📦</span>
+                <div>
+                    <strong>Inventory Alert</strong>
+                    <p>
+                        3 materials currently have stock shortages
+                        requiring procurement.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="insight-box">
+                <span>💰</span>
+                <div>
+                    <strong>Payment Attention</strong>
+                    <p>
+                        ₹2.1 L is currently outstanding from customers.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="suppliers-page" id="suppliersPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">BUSINESS</p>
+            <h1>Suppliers</h1>
+            <p>Manage suppliers and procurement partners.</p>
+        </div>
+
+        <button class="new-order" id="addSupplierBtn">
+            + Add Supplier
+        </button>
+
+    </div>
+
+
+    <!-- SUPPLIER SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL SUPPLIERS</p>
+            <h3>18</h3>
+            <span>Active suppliers</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ACTIVE</p>
+            <h3>15</h3>
+            <span>Currently supplying</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING ORDERS</p>
+            <h3>08</h3>
+            <span>Purchase orders</span>
+        </div>
+
+        <div class="detail-card">
+            <p>SUPPLIER VALUE</p>
+            <h3>₹4.8 L</h3>
+            <span>This month</span>
+        </div>
+
+    </div>
+
+
+    <!-- SUPPLIER TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Supplier Directory</h2>
+                <p>Suppliers connected with your manufacturing operations.</p>
+            </div>
+
+            <input
+                type="text"
+                id="searchSupplier"
+                placeholder="Search supplier..."
+                style="padding: 8px 14px; border: 1px solid var(--border-subtle, #e5e7eb); border-radius: 8px; font-size: 14px; outline: none;"
+            >
+
+        </div>
+
+
+        <table id="supplierTable">
+
+            <thead>
+
+                <tr>
+                    <th>SUPPLIER</th>
+                    <th>CONTACT</th>
+                    <th>MATERIAL</th>
+                    <th>ORDERS</th>
+                    <th>STATUS</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>
+                        <strong>Metro Metals</strong>
+                    </td>
+
+                    <td>98765 43210</td>
+
+                    <td>Steel Sheet</td>
+
+                    <td>12</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <strong>ColorTech Supplies</strong>
+                    </td>
+
+                    <td>98111 22334</td>
+
+                    <td>Paint</td>
+
+                    <td>8</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <strong>Textile Hub</strong>
+                    </td>
+
+                    <td>98999 11223</td>
+
+                    <td>Fabric</td>
+
+                    <td>6</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Active
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <strong>Foam Industries</strong>
+                    </td>
+
+                    <td>97654 32109</td>
+
+                    <td>Foam</td>
+
+                    <td>5</td>
+
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+        <!-- ================= MODALS ================= -->
+        <div class="modal" id="materialModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <p class="small-text">MATERIAL MANAGEMENT</p>
+                <h2>Add Material</h2>
+            </div>
+
+            <button id="closeMaterialModal">×</button>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Material Name</label>
+                <input
+                    type="text"
+                    id="materialName"
+                    placeholder="Enter material name"
+                >
+            </div>
+
+            <div>
+                <label>Quantity</label>
+                <input
+                    type="number"
+                    id="materialQty"
+                    placeholder="Enter quantity"
+                >
+            </div>
+
+            <div>
+                <label>Unit</label>
+                <select id="materialUnit">
+                    <option value="kg">kg</option>
+                    <option value="L">L</option>
+                    <option value="m">m</option>
+                    <option value="pcs">pcs</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="new-order" id="saveMaterialBtn">
+            Save Material
+        </button>
+
+    </div>
+
+</div>
+
+        <div class="modal" id="bomModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <p class="small-text">MANUFACTURING</p>
+                <h2>Create Bill of Materials</h2>
+            </div>
+
+            <button id="closeBomModal">×</button>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Product Name</label>
+                <input type="text" id="bomProduct"
+                       placeholder="Enter product name">
+            </div>
+
+            <div>
+                <label>Version</label>
+                <input type="text" id="bomVersion"
+                       placeholder="e.g. v1.0">
+            </div>
+
+        </div>
+
+        <h3>Materials Required</h3>
+
+        <div class="material-row">
+
+            <input type="text" id="materialName"
+                   placeholder="Material name">
+
+            <input type="number" id="materialQty"
+                   placeholder="Quantity">
+
+            <select id="materialUnit">
+                <option value="kg">kg</option>
+                <option value="L">L</option>
+                <option value="m">m</option>
+                <option value="pcs">pcs</option>
+            </select>
+
+            <button id="addMaterialBtn">+ Add</button>
+
+        </div>
+
+        <div id="materialList"></div>
+
+        <button class="new-order" id="saveBomBtn">
+            Create BOM
+        </button>
+
+    </div>
+
+</div>
+
+        <div class="modal" id="orderModal">
+
+            <div class="modal-box">
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p class="small-text">
+                            NEW ORDER
+                        </p>
+
+                        <h2>
+                            Create Manufacturing Order
+                        </h2>
+
+                    </div>
+
+
+                    <button id="closeModal">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div>
+
+                        <label>
+                            Customer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerInput"
+                            placeholder="Enter customer name"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Product
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productInput"
+                            placeholder="Enter product"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Quantity
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantityInput"
+                            placeholder="Enter quantity"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Order Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dateInput"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button class="new-order" id="saveOrderBtn">
+                    Create Order
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SUPPLIER MODAL ================= -->
+        <div class="modal" id="supplierModal">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <div>
+                        <p class="small-text">SUPPLIER MANAGEMENT</p>
+                        <h2>Add Supplier</h2>
+                    </div>
+                    <button id="closeSupplierModal">×</button>
+                </div>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Supplier Name</label>
+                        <input type="text" id="supplierNameInput" placeholder="Enter supplier name">
+                    </div>
+
+                    <div>
+                        <label>Contact Number</label>
+                        <input type="text" id="supplierContactInput" placeholder="e.g. 98765 43210">
+                    </div>
+
+                    <div>
+                        <label>Material Supplied</label>
+                        <input type="text" id="supplierMaterialInput" placeholder="e.g. Steel Sheet">
+                    </div>
+
+                    <div>
+                        <label>Status</label>
+                        <select id="supplierStatusInput">
+                            <option value="Active">Active</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="new-order" id="saveSupplierBtn">
+                    Add Supplier
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= PAYMENT MODAL ================= -->
+        <div class="modal" id="paymentModal">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <div>
+                        <p class="small-text">FINANCE</p>
+                        <h2>Record Payment</h2>
+                    </div>
+                    <button id="closePaymentModal">×</button>
+                </div>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Customer Name</label>
+                        <input type="text" id="paymentCustomerInput" placeholder="Enter customer name">
+                    </div>
+
+                    <div>
+                        <label>Invoice ID</label>
+                        <input type="text" id="paymentInvoiceInput" placeholder="e.g. INV-1005">
+                    </div>
+
+                    <div>
+                        <label>Amount (₹)</label>
+                        <input type="number" id="paymentAmountInput" placeholder="Enter amount">
+                    </div>
+
+                    <div>
+                        <label>Status</label>
+                        <select id="paymentStatusInput">
+                            <option value="Paid">Paid</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Overdue">Overdue</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="new-order" id="savePaymentBtn">
+                    Record Payment
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= PURCHASE ORDER MODAL ================= -->
+        <div class="modal" id="poModal">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <div>
+                        <p class="small-text">PROCUREMENT</p>
+                        <h2>Create Purchase Order</h2>
+                    </div>
+                    <button id="closePOModal">×</button>
+                </div>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Supplier Name</label>
+                        <input type="text" id="poSupplierInput" placeholder="e.g. Metro Metals">
+                    </div>
+
+                    <div>
+                        <label>Material</label>
+                        <input type="text" id="poMaterialInput" placeholder="e.g. Steel Sheets">
+                    </div>
+
+                    <div>
+                        <label>Quantity</label>
+                        <input type="number" id="poQuantityInput" placeholder="Enter quantity">
+                    </div>
+
+                    <div>
+                        <label>Status</label>
+                        <select id="poStatusInput">
+                            <option value="Pending">Pending</option>
+                            <option value="In Transit">In Transit</option>
+                            <option value="Received">Received</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="new-order" id="savePOBtn">
+                    Create Purchase Order
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+<!-- ================= MODULAR JAVASCRIPT SYSTEM ================= -->
+<script src="js/config.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api.js"></script>
+<script src="js/modules/navigation.js"></script>
+<script src="js/modules/modals.js"></script>
+<script src="js/modules/orders.js"></script>
+<script src="js/modules/orderDetails.js"></script>
+<script src="js/modules/bom.js"></script>
+<script src="js/modules/inventory.js"></script>
+<script src="js/modules/procurement.js"></script>
+<script src="js/modules/production.js"></script>
+<script src="js/modules/invoices.js"></script>
+<script src="js/modules/payments.js"></script>
+<script src="js/modules/analytics.js"></script>
+<script src="js/modules/suppliers.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

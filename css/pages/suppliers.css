@@ -1,0 +1,12 @@
+/* ================= SUPPLIERS PAGE ================= */
+.suppliers-page {
+    display: none;
+}
+
+.suppliers-page .panel {
+    margin-bottom: 40px;
+}
+
+.suppliers-page table td strong {
+    font-weight: 600;
+}

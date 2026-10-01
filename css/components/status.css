@@ -1,0 +1,29 @@
+/* ================= STATUS BADGES ================= */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.production-status {
+    background: var(--status-production-bg, #e0e7ff);
+    color: var(--status-production-text, #4338ca);
+}
+
+.completed-status {
+    background: var(--status-completed-bg, #dcfce7);
+    color: var(--status-completed-text, #15803d);
+}
+
+.pending-status {
+    background: var(--status-pending-bg, #fef3c7);
+    color: var(--status-pending-text, #a16207);
+}
+
+.overdue-status {
+    background: var(--status-overdue-bg, #fee2e2);
+    color: var(--status-overdue-text, #b91c1c);
+}

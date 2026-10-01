@@ -1,0 +1,43 @@
+/* ================= TIMELINE ================= */
+.timeline {
+    margin-top: 10px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-left: 2px solid var(--border-subtle, #e5e7eb);
+    margin-left: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--border-subtle, #e5e7eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.timeline-item.done .timeline-dot {
+    background: var(--status-completed-bg, #dcfce7);
+    color: var(--status-completed-text, #15803d);
+}
+
+.timeline-item.current .timeline-dot {
+    background: var(--status-production-bg, #e0e7ff);
+    color: var(--status-production-text, #4338ca);
+}
+
+.timeline-item p {
+    font-size: 12px;
+    color: var(--text-muted, #8a94a6);
+    margin-top: 5px;
+}

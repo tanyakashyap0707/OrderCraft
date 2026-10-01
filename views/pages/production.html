@@ -1,0 +1,146 @@
+<section class="production-page" id="productionPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">MANUFACTURING</p>
+            <h1>Production</h1>
+            <p>Track manufacturing orders and production progress.</p>
+        </div>
+
+        <button class="new-order" id="createProductionBtn">
+            + Start Production
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>ACTIVE JOBS</p>
+            <h3>06</h3>
+            <span>Currently in production</span>
+        </div>
+
+        <div class="detail-card">
+            <p>UNITS IN PRODUCTION</p>
+            <h3>480</h3>
+            <span>Across all jobs</span>
+        </div>
+
+        <div class="detail-card">
+            <p>COMPLETED</p>
+            <h3>32</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ON-TIME RATE</p>
+            <h3>94%</h3>
+            <span>Production efficiency</span>
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCTION TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Production Orders</h2>
+                <p>Monitor manufacturing progress</p>
+            </div>
+
+        </div>
+
+
+        <table id="productionTable">
+
+            <thead>
+                <tr>
+                    <th>JOB ID</th>
+                    <th>ORDER</th>
+                    <th>PRODUCT</th>
+                    <th>QUANTITY</th>
+                    <th>PROGRESS</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>JOB-001</td>
+                    <td>ORD-1042</td>
+                    <td>Office Chair</td>
+                    <td>100</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:80%"></div>
+                        </div>
+                        <small>80 / 100</small>
+                    </td>
+
+                    <td>
+                        <span class="status production-status">
+                            In Production
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>JOB-002</td>
+                    <td>ORD-1043</td>
+                    <td>Wooden Desk</td>
+                    <td>50</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:45%"></div>
+                        </div>
+                        <small>22 / 50</small>
+                    </td>
+
+                    <td>
+                        <span class="status production-status">
+                            In Production
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>JOB-003</td>
+                    <td>ORD-1038</td>
+                    <td>Storage Cabinet</td>
+                    <td>80</td>
+
+                    <td>
+                        <div class="mini-progress">
+                            <div style="width:100%"></div>
+                        </div>
+                        <small>80 / 80</small>
+                    </td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Completed
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>

@@ -1,0 +1,53 @@
+/* ================= ORDERS PAGE ================= */
+.orders-page {
+    display: none;
+}
+
+.page-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-heading h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.page-heading p {
+    color: var(--text-secondary, #7b8494);
+}
+
+.order-tools {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.order-tools input {
+    width: 320px;
+    padding: 12px 15px;
+    border: 1px solid #dfe3e8;
+    border-radius: var(--border-radius-md, 8px);
+    outline: none;
+    font-size: 14px;
+}
+
+.order-tools input:focus {
+    border-color: var(--primary-color, #111827);
+}
+
+.order-tools select {
+    padding: 12px 15px;
+    border: 1px solid #dfe3e8;
+    border-radius: var(--border-radius-md, 8px);
+    background: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+#ordersTable tbody tr {
+    cursor: pointer;
+}

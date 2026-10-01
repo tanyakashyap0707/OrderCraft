@@ -1,0 +1,171 @@
+<section class="inventory-page" id="inventoryPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">MATERIAL MANAGEMENT</p>
+            <h1>Materials & Inventory</h1>
+            <p>Monitor raw materials required for manufacturing.</p>
+        </div>
+
+        <button class="new-order" id="openMaterialModalBtn">
+        + Add Material
+        </button>
+
+    </div>
+
+
+    <!-- INVENTORY SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL MATERIALS</p>
+            <h3>24</h3>
+            <span>Active materials</span>
+        </div>
+
+        <div class="detail-card">
+            <p>LOW STOCK</p>
+            <h3>5</h3>
+            <span>Needs attention</span>
+        </div>
+
+        <div class="detail-card">
+            <p>SHORTAGE</p>
+            <h3>3</h3>
+            <span>Purchase required</span>
+        </div>
+
+        <div class="detail-card">
+            <p>INVENTORY VALUE</p>
+            <h3>₹8.4 L</h3>
+            <span>Current stock value</span>
+        </div>
+
+    </div>
+
+
+    <!-- MATERIAL TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Raw Materials</h2>
+                <p>Current inventory and manufacturing requirements</p>
+            </div>
+
+        </div>
+
+
+        <table id="inventoryTable">
+
+            <thead>
+
+                <tr>
+                    <th>MATERIAL</th>
+                    <th>UNIT</th>
+                    <th>AVAILABLE</th>
+                    <th>REQUIRED</th>
+                    <th>SHORTAGE</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>Steel Sheet</td>
+                    <td>kg</td>
+                    <td>150</td>
+                    <td>200</td>
+                    <td>50</td>
+
+                    <td>
+                        <span class="status pending-status">
+                            Shortage
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn">
+                            Create PO
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Foam</td>
+                    <td>kg</td>
+                    <td>200</td>
+                    <td>150</td>
+                    <td>0</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Available
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn disabled">
+                            No Action
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Paint</td>
+                    <td>L</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>10</td>
+
+                    <td>
+                        <span class="status pending-status">
+                            Shortage
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn">
+                            Create PO
+                        </button>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Fabric</td>
+                    <td>m</td>
+                    <td>500</td>
+                    <td>400</td>
+                    <td>0</td>
+
+                    <td>
+                        <span class="status completed-status">
+                            Available
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="purchase-btn disabled">
+                            No Action
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>

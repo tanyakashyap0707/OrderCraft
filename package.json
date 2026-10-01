@@ -1,0 +1,20 @@
+{
+  "name": "ordercraft",
+  "version": "1.0.0",
+  "description": "OrderCraft - Modular Manufacturing & Operations Platform",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js",
+    "build:html": "node scripts/build-html.js",
+    "watch:html": "node scripts/build-html.js --watch"
+  },
+  "keywords": [
+    "ordercraft",
+    "manufacturing",
+    "erp",
+    "modular"
+  ],
+  "author": "",
+  "license": "ISC"
+}

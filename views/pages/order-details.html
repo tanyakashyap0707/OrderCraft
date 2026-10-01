@@ -1,0 +1,313 @@
+<section class="order-details-page" id="orderDetailsPage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">ORDER MANAGEMENT</p>
+            <h1>Order ORD-1042</h1>
+            <p>Complete manufacturing and payment overview</p>
+        </div>
+
+        <span class="status production-status">
+            In Production
+        </span>
+
+    </div>
+
+
+    <!-- ORDER INFO -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>CUSTOMER</p>
+            <h3>ABC Industries</h3>
+            <span>Corporate Customer</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PRODUCT</p>
+            <h3>Office Chair</h3>
+            <span>Quantity: 100</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ORDER VALUE</p>
+            <h3>₹1,18,000</h3>
+            <span>Including GST</span>
+        </div>
+
+        <div class="detail-card">
+            <p>ORDER DATE</p>
+            <h3>29 Sep 2026</h3>
+            <span>Expected: 05 Oct 2026</span>
+        </div>
+
+    </div>
+
+
+    <!-- ORDER TRACKING -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Order Tracking</h2>
+                <p>Track the complete manufacturing workflow</p>
+            </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>Order Received</strong>
+                    <p>Customer order successfully created</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>BOM Generated</strong>
+                    <p>Bill of materials prepared</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item done">
+                <div class="timeline-dot">✓</div>
+
+                <div>
+                    <strong>Materials Checked</strong>
+                    <p>Inventory availability verified</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item current">
+                <div class="timeline-dot">●</div>
+
+                <div>
+                    <strong>Production</strong>
+                    <p>Manufacturing is currently in progress</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot">○</div>
+
+                <div>
+                    <strong>Invoice</strong>
+                    <p>Invoice will be generated after production</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot">○</div>
+
+                <div>
+                    <strong>Payment</strong>
+                    <p>Payment pending</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MATERIAL + PRODUCTION -->
+
+    <div class="detail-grid">
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Material Status</h2>
+                    <p>Required vs available inventory</p>
+                </div>
+            </div>
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>MATERIAL</th>
+                        <th>REQUIRED</th>
+                        <th>AVAILABLE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Steel Sheet</td>
+                        <td>200 kg</td>
+                        <td>200 kg</td>
+                        <td>
+                            <span class="status completed-status">
+                                Available
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Foam</td>
+                        <td>150 kg</td>
+                        <td>150 kg</td>
+                        <td>
+                            <span class="status completed-status">
+                                Available
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Paint</td>
+                        <td>30 L</td>
+                        <td>20 L</td>
+                        <td>
+                            <span class="status pending-status">
+                                Shortage
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PRODUCTION -->
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Production</h2>
+                    <p>Current manufacturing progress</p>
+                </div>
+
+            </div>
+
+            <h1>80%</h1>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <p class="progress-text">
+                80 of 100 units completed
+            </p>
+
+            <span class="status production-status">
+                In Production
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- INVOICE -->
+
+    <div class="panel invoice-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Invoice</h2>
+                <p>Generate and manage customer billing</p>
+            </div>
+
+            <button class="new-order" id="generateInvoiceBtn">
+                Generate Invoice
+            </button>
+
+        </div>
+
+
+        <div class="invoice-summary">
+
+            <div>
+                <span>Subtotal</span>
+                <strong>₹1,00,000</strong>
+            </div>
+
+            <div>
+                <span>GST (18%)</span>
+                <strong>₹18,000</strong>
+            </div>
+
+            <div class="invoice-total">
+                <span>Total</span>
+                <strong>₹1,18,000</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT -->
+
+    <div class="panel payment-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Payment Tracking</h2>
+                <p>Monitor customer payment status</p>
+            </div>
+
+            <span class="status pending-status">
+                Pending
+            </span>
+
+        </div>
+
+
+        <div class="payment-info">
+
+            <div>
+                <p>TOTAL AMOUNT</p>
+                <h2>₹1,18,000</h2>
+            </div>
+
+            <div>
+                <p>PAID</p>
+                <h2>₹0</h2>
+            </div>
+
+            <div>
+                <p>REMAINING</p>
+                <h2>₹1,18,000</h2>
+            </div>
+
+        </div>
+
+
+        <button class="new-order" id="markPaidBtn">
+            Mark as Paid
+        </button>
+
+    </div>
+
+</section>

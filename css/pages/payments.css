@@ -1,0 +1,18 @@
+/* ================= PAYMENTS PAGE ================= */
+.payments-page {
+    display: none;
+}
+
+.payment-row {
+    display: grid;
+    grid-template-columns: 1fr 180px 120px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle, #e5e7eb);
+}
+
+.payment-row p {
+    font-size: 12px;
+    color: var(--text-muted, #8a94a6);
+    margin-top: 5px;
+}

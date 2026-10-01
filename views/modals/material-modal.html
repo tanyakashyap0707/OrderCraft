@@ -1,0 +1,52 @@
+<div class="modal" id="materialModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <p class="small-text">MATERIAL MANAGEMENT</p>
+                <h2>Add Material</h2>
+            </div>
+
+            <button id="closeMaterialModal">×</button>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Material Name</label>
+                <input
+                    type="text"
+                    id="materialName"
+                    placeholder="Enter material name"
+                >
+            </div>
+
+            <div>
+                <label>Quantity</label>
+                <input
+                    type="number"
+                    id="materialQty"
+                    placeholder="Enter quantity"
+                >
+            </div>
+
+            <div>
+                <label>Unit</label>
+                <select id="materialUnit">
+                    <option value="kg">kg</option>
+                    <option value="L">L</option>
+                    <option value="m">m</option>
+                    <option value="pcs">pcs</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button class="new-order" id="saveMaterialBtn">
+            Save Material
+        </button>
+
+    </div>
+
+</div>

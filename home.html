@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderCraft — Manufacturing Operations Platform</title>
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        :root {
+            --dark:   #111827;
+            --dark2:  #1e2b3c;
+            --accent: #4f46e5;
+            --accent2:#6366f1;
+            --light:  #f5f7fb;
+            --white:  #ffffff;
+            --muted:  #8a94a6;
+            --border: #e8ebf0;
+            --green:  #15803d;
+            --green-bg: #dcfce7;
+            --radius: 14px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 60px;
+            height: 68px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 20px; font-weight: 700; color: var(--dark);
+            text-decoration: none;
+        }
+        .nav-logo span {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px;
+            background: var(--dark);
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex; gap: 36px; list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none; color: var(--muted);
+            font-size: 14px; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--dark); }
+
+        .nav-cta {
+            display: flex; gap: 12px; align-items: center;
+        }
+        .btn-ghost {
+            background: none; border: 1.5px solid var(--border);
+            color: var(--dark); padding: 9px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 500;
+            cursor: pointer; text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .btn-ghost:hover { border-color: var(--dark); background: var(--light); }
+
+        .btn-primary {
+            background: var(--dark); color: white;
+            border: none; padding: 10px 22px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            cursor: pointer; text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-flex; align-items: center; gap: 7px;
+        }
+        .btn-primary:hover { background: #1e2b3c; }
+        .btn-primary:active { transform: translateY(1px); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(150deg, #0f172a 0%, #1e293b 50%, #111827 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background grid pattern */
+        .hero::before {
+            content: "";
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Glowing orbs */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.18;
+            pointer-events: none;
+        }
+        .orb-1 { width: 500px; height: 500px; background: #4f46e5; top: -100px; left: -100px; }
+        .orb-2 { width: 400px; height: 400px; background: #06b6d4; bottom: -80px; right: -60px; }
+        .orb-3 { width: 300px; height: 300px; background: #8b5cf6; top: 40%; left: 50%; transform: translateX(-50%); }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(79,70,229,0.15);
+            border: 1px solid rgba(79,70,229,0.35);
+            color: #a5b4fc;
+            padding: 7px 16px; border-radius: 50px;
+            font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            position: relative; z-index: 1;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #6366f1;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800; line-height: 1.1;
+            color: white;
+            position: relative; z-index: 1;
+            max-width: 820px;
+            letter-spacing: -1.5px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #6366f1, #a78bfa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            margin-top: 24px;
+            font-size: 18px; color: #94a3b8;
+            max-width: 580px; line-height: 1.7;
+            position: relative; z-index: 1;
+        }
+
+        .hero-actions {
+            display: flex; gap: 14px; align-items: center;
+            margin-top: 44px;
+            position: relative; z-index: 1;
+        }
+
+        .btn-hero-primary {
+            background: white; color: var(--dark);
+            border: none; padding: 16px 32px;
+            border-radius: 10px; font-size: 15px; font-weight: 700;
+            cursor: pointer; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 9px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+        }
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+        }
+        .btn-hero-primary .arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .btn-hero-primary:hover .arrow { transform: translateX(4px); }
+
+        .btn-hero-ghost {
+            background: rgba(255,255,255,0.08);
+            border: 1.5px solid rgba(255,255,255,0.15);
+            color: white; padding: 15px 28px;
+            border-radius: 10px; font-size: 15px; font-weight: 500;
+            cursor: pointer; text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-hero-ghost:hover {
+            background: rgba(255,255,255,0.13);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* Stats strip below CTA */
+        .hero-stats {
+            display: flex; gap: 48px;
+            margin-top: 64px;
+            position: relative; z-index: 1;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat h3 {
+            font-size: 28px; font-weight: 800; color: white;
+        }
+        .hero-stat p {
+            font-size: 12px; color: #64748b; margin-top: 4px; letter-spacing: 0.5px;
+        }
+        .hero-divider {
+            width: 1px; background: rgba(255,255,255,0.08);
+        }
+
+        /* ===== FEATURE STRIP ===== */
+        .strip {
+            background: var(--light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 60px;
+            display: flex; align-items: center;
+            gap: 40px; overflow: hidden;
+        }
+        .strip-label {
+            font-size: 11px; color: var(--muted); letter-spacing: 1px;
+            font-weight: 600; white-space: nowrap;
+        }
+        .strip-items {
+            display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+        }
+        .strip-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 13px; color: #475569; font-weight: 500;
+        }
+        .strip-item .icon {
+            font-size: 16px;
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section {
+            padding: 100px 60px;
+        }
+        .section-label {
+            font-size: 11px; letter-spacing: 2px; font-weight: 700;
+            color: var(--accent); text-transform: uppercase; margin-bottom: 14px;
+        }
+        .section-title {
+            font-size: clamp(28px, 3vw, 42px); font-weight: 800;
+            line-height: 1.2; letter-spacing: -0.5px;
+            color: var(--dark); margin-bottom: 16px;
+        }
+        .section-sub {
+            font-size: 16px; color: var(--muted); max-width: 520px;
+            line-height: 1.7;
+        }
+
+        /* ===== FEATURES GRID ===== */
+        .features-section {
+            background: var(--white);
+        }
+        .features-header {
+            text-align: center; margin-bottom: 64px;
+        }
+        .features-header .section-sub { margin: 0 auto; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            cursor: default;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            border-color: #d1d5db;
+        }
+        .feature-icon {
+            width: 52px; height: 52px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 12px;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            font-size: 17px; font-weight: 700;
+            margin-bottom: 10px; color: var(--dark);
+        }
+        .feature-card p {
+            font-size: 14px; color: var(--muted);
+            line-height: 1.65;
+        }
+
+        /* icon bg colours */
+        .ic-indigo  { background: #ede9fe; }
+        .ic-blue    { background: #dbeafe; }
+        .ic-green   { background: #dcfce7; }
+        .ic-yellow  { background: #fef9c3; }
+        .ic-rose    { background: #ffe4e6; }
+        .ic-teal    { background: #ccfbf1; }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-section {
+            background: var(--light);
+        }
+        .how-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 80px; align-items: center;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .steps {
+            display: flex; flex-direction: column; gap: 36px;
+        }
+        .step {
+            display: flex; gap: 20px; align-items: flex-start;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 42px; height: 42px;
+            background: var(--dark); color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 15px; font-weight: 700;
+        }
+        .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .step p  { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+        /* mini dashboard preview */
+        .mini-dashboard {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .mini-topbar {
+            background: var(--dark);
+            padding: 14px 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .mini-dot { width: 11px; height: 11px; border-radius: 50%; }
+        .mini-title {
+            margin-left: 8px; font-size: 13px;
+            color: rgba(255,255,255,0.5); font-weight: 500;
+        }
+        .mini-body { padding: 20px; }
+        .mini-cards {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 12px; margin-bottom: 16px;
+        }
+        .mini-card {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 10px; padding: 14px;
+        }
+        .mini-card .label { font-size: 10px; color: var(--muted); letter-spacing: 0.5px; }
+        .mini-card .val   { font-size: 22px; font-weight: 800; margin: 6px 0 2px; }
+        .mini-card .trend { font-size: 11px; color: #16a34a; }
+        .mini-row {
+            background: var(--light); border: 1px solid var(--border);
+            border-radius: 8px; padding: 10px 14px;
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .mini-row .ord { font-size: 12px; font-weight: 700; }
+        .mini-row .cust { font-size: 11px; color: var(--muted); }
+        .mini-badge {
+            font-size: 10px; font-weight: 600; padding: 3px 9px;
+            border-radius: 20px;
+        }
+        .mb-prod { background: #e0e7ff; color: #4338ca; }
+        .mb-done { background: #dcfce7; color: #15803d; }
+        .mb-pend { background: #fef3c7; color: #a16207; }
+
+        /* ===== METRICS ===== */
+        .metrics-section {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        .metrics-section .section-title { color: white; margin: 0 auto 60px; }
+        .metrics-section .section-label { color: #6366f1; margin: 0 auto 14px; }
+        .metrics-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 2px; max-width: 900px; margin: 0 auto;
+            background: rgba(255,255,255,0.06);
+            border-radius: 16px; overflow: hidden;
+        }
+        .metric-box {
+            padding: 40px 20px;
+            background: rgba(17,24,39,0.8);
+        }
+        .metric-box h2 {
+            font-size: 42px; font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .metric-box p { font-size: 13px; color: #64748b; margin-top: 8px; }
+
+        /* ===== MODULES ===== */
+        .modules-section { background: var(--white); }
+        .modules-header { max-width: 520px; margin-bottom: 56px; }
+        .modules-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 16px;
+        }
+        .module-tile {
+            background: var(--light);
+            border: 1.5px solid var(--border);
+            border-radius: 12px; padding: 24px;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            cursor: default;
+        }
+        .module-tile:hover {
+            border-color: #c7d2fe;
+            box-shadow: 0 6px 20px rgba(79,70,229,0.1);
+            transform: translateY(-3px);
+        }
+        .module-tile .emoji { font-size: 28px; margin-bottom: 12px; display: block; }
+        .module-tile h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        .module-tile p  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+        /* ===== CTA BANNER ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            text-align: center;
+            padding: 100px 60px;
+        }
+        .cta-section h2 {
+            font-size: clamp(28px, 3.5vw, 48px);
+            font-weight: 800; color: white;
+            letter-spacing: -0.5px; margin-bottom: 18px;
+        }
+        .cta-section p {
+            font-size: 16px; color: #94a3b8;
+            max-width: 500px; margin: 0 auto 44px; line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex; gap: 14px; justify-content: center;
+        }
+        .btn-cta-white {
+            background: white; color: var(--dark);
+            border: none; padding: 16px 36px;
+            border-radius: 10px; font-size: 15px; font-weight: 700;
+            cursor: pointer; text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+        .btn-cta-outline {
+            background: transparent;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            color: white; padding: 15px 32px;
+            border-radius: 10px; font-size: 15px; font-weight: 500;
+            cursor: pointer; text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-cta-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.35); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            padding: 40px 60px;
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 16px; font-weight: 700; color: white;
+        }
+        .footer-logo span {
+            width: 30px; height: 30px; background: rgba(255,255,255,0.1);
+            border-radius: 8px; display: inline-flex;
+            align-items: center; justify-content: center; font-size: 15px;
+        }
+        footer p { font-size: 12px; color: #475569; }
+
+        /* ===== SCROLL REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+    <a href="home.html" class="nav-logo">
+        <span>◈</span> OrderCraft
+    </a>
+    <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#modules">Modules</a></li>
+    </ul>
+    <div class="nav-cta">
+        <a href="index.html" class="btn-primary">
+            Open Dashboard <span class="arrow">→</span>
+        </a>
+    </div>
+</nav>
+
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+
+    <div class="hero-badge">
+        <span class="dot"></span>
+        Manufacturing Operations Platform
+    </div>
+
+    <h1>
+        Run your factory<br>
+        <span class="highlight">smarter, faster,</span><br>
+        without the chaos
+    </h1>
+
+    <p class="hero-sub">
+        OrderCraft connects your orders, production, inventory, suppliers,
+        and payments — all in one streamlined dashboard built for Indian manufacturers.
+    </p>
+
+    <div class="hero-actions">
+        <a href="index.html" class="btn-hero-primary">
+            Go to Dashboard <span class="arrow">→</span>
+        </a>
+        <a href="#features" class="btn-hero-ghost">
+            See what's inside
+        </a>
+    </div>
+
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <h3>10+</h3>
+            <p>MODULES</p>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+            <h3>Real-time</h3>
+            <p>LIVE DATA</p>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+            <h3>₹0</h3>
+            <p>SETUP COST</p>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+            <h3>GST</h3>
+            <p>READY</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== STRIP ===== -->
+<div class="strip">
+    <span class="strip-label">EVERYTHING INCLUDED</span>
+    <div class="strip-items">
+        <div class="strip-item"><span class="icon">📦</span> Order Management</div>
+        <div class="strip-item"><span class="icon">🏭</span> Production Planning</div>
+        <div class="strip-item"><span class="icon">📋</span> Bill of Materials</div>
+        <div class="strip-item"><span class="icon">🧰</span> Inventory Control</div>
+        <div class="strip-item"><span class="icon">🚚</span> Procurement</div>
+        <div class="strip-item"><span class="icon">🤝</span> Supplier Directory</div>
+        <div class="strip-item"><span class="icon">🧾</span> Invoicing</div>
+        <div class="strip-item"><span class="icon">💳</span> Payments</div>
+        <div class="strip-item"><span class="icon">📊</span> Analytics</div>
+    </div>
+</div>
+
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section" id="features">
+    <div class="features-header reveal">
+        <p class="section-label">Features</p>
+        <h2 class="section-title">Built for the shop floor,<br>not the boardroom</h2>
+        <p class="section-sub">Every feature is designed around how real manufacturing businesses actually operate — fast, offline-tolerant, and practical.</p>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card reveal">
+            <div class="feature-icon ic-indigo">📦</div>
+            <h3>Order Management</h3>
+            <p>Create, track, and manage customer orders with status updates, filtering, and order-to-delivery timelines.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-icon ic-blue">🏭</div>
+            <h3>Production Planning</h3>
+            <p>Monitor which units are in production, set progress milestones, and track completion rates per order.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-icon ic-teal">📋</div>
+            <h3>Bill of Materials</h3>
+            <p>Define the exact materials, quantities, and units required to manufacture each of your products.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon ic-yellow">🧰</div>
+            <h3>Inventory Control</h3>
+            <p>Get real-time visibility into stock levels. Low stock alerts fire automatically so you never run short.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-icon ic-rose">🚚</div>
+            <h3>Procurement</h3>
+            <p>Create purchase orders, track deliveries from suppliers, and manage inbound material status end-to-end.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-icon ic-green">💳</div>
+            <h3>Payments & Invoicing</h3>
+            <p>Record payments, generate GST-ready invoices, and monitor outstanding balances with one-click reconciliation.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-section" id="how">
+    <div class="how-grid">
+        <div>
+            <p class="section-label reveal">How It Works</p>
+            <h2 class="section-title reveal">From order to delivery<br>in four steps</h2>
+            <p class="section-sub reveal" style="margin-bottom: 44px;">OrderCraft's workflow mirrors the real sequence of a manufacturing job — nothing extra, nothing missing.</p>
+
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h4>Receive the Order</h4>
+                        <p>Log a new customer order with product, quantity, and expected delivery date.</p>
+                    </div>
+                </div>
+                <div class="step reveal reveal-delay-1">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h4>Check Materials & Procure</h4>
+                        <p>BOM auto-identifies required materials. If stock is short, raise a purchase order instantly.</p>
+                    </div>
+                </div>
+                <div class="step reveal reveal-delay-2">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h4>Start Production</h4>
+                        <p>Track units being manufactured. Update progress as your team completes batches.</p>
+                    </div>
+                </div>
+                <div class="step reveal reveal-delay-3">
+                    <div class="step-num">4</div>
+                    <div>
+                        <h4>Invoice & Collect</h4>
+                        <p>Generate a GST invoice on delivery and record the customer payment to close the cycle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini dashboard preview -->
+        <div class="mini-dashboard reveal">
+            <div class="mini-topbar">
+                <div class="mini-dot" style="background:#ff5f57"></div>
+                <div class="mini-dot" style="background:#ffbd2e"></div>
+                <div class="mini-dot" style="background:#28c840"></div>
+                <span class="mini-title">OrderCraft Dashboard</span>
+            </div>
+            <div class="mini-body">
+                <div class="mini-cards">
+                    <div class="mini-card">
+                        <div class="label">ACTIVE ORDERS</div>
+                        <div class="val">24</div>
+                        <div class="trend">↑ 12% this month</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="label">IN PRODUCTION</div>
+                        <div class="val">12</div>
+                        <div class="trend" style="color:#4338ca">8 on schedule</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="label">MATERIAL ALERTS</div>
+                        <div class="val" style="color:#f59e0b">06</div>
+                        <div class="trend" style="color:#b45309">Needs attention</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="label">PENDING PAYMENTS</div>
+                        <div class="val">₹2.4L</div>
+                        <div class="trend" style="color:#b91c1c">14 invoices</div>
+                    </div>
+                </div>
+                <div class="mini-row">
+                    <div>
+                        <div class="ord">ORD-1042</div>
+                        <div class="cust">ABC Industries · Office Chair × 100</div>
+                    </div>
+                    <span class="mini-badge mb-prod">In Production</span>
+                </div>
+                <div class="mini-row">
+                    <div>
+                        <div class="ord">ORD-1041</div>
+                        <div class="cust">XYZ Ltd · Wooden Desk × 50</div>
+                    </div>
+                    <span class="mini-badge mb-done">Completed</span>
+                </div>
+                <div class="mini-row">
+                    <div>
+                        <div class="ord">ORD-1040</div>
+                        <div class="cust">PQR Corp · Storage Cabinet × 25</div>
+                    </div>
+                    <span class="mini-badge mb-pend">Pending</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== METRICS ===== -->
+<section class="metrics-section">
+    <p class="section-label reveal">By the numbers</p>
+    <h2 class="section-title reveal">Your entire operation,<br>always in view</h2>
+    <div class="metrics-grid">
+        <div class="metric-box reveal">
+            <h2>10+</h2>
+            <p>Integrated Modules</p>
+        </div>
+        <div class="metric-box reveal reveal-delay-1">
+            <h2>₹0</h2>
+            <p>Subscription Fee</p>
+        </div>
+        <div class="metric-box reveal reveal-delay-2">
+            <h2>100%</h2>
+            <p>GST Compliant</p>
+        </div>
+        <div class="metric-box reveal reveal-delay-3">
+            <h2>24/7</h2>
+            <p>Always Available</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== MODULES ===== -->
+<section class="modules-section" id="modules">
+    <div class="modules-header reveal">
+        <p class="section-label">All Modules</p>
+        <h2 class="section-title">Every tool your<br>factory needs</h2>
+        <p class="section-sub">A complete suite, all connected, all in one place.</p>
+    </div>
+    <div class="modules-grid">
+        <div class="module-tile reveal">
+            <span class="emoji">📊</span>
+            <h4>Dashboard</h4>
+            <p>Live KPI overview at a glance</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-1">
+            <span class="emoji">📦</span>
+            <h4>Orders</h4>
+            <p>Full order lifecycle management</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-2">
+            <span class="emoji">🏭</span>
+            <h4>Planning</h4>
+            <p>Production scheduling & progress</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-3">
+            <span class="emoji">📋</span>
+            <h4>BOM</h4>
+            <p>Bill of Materials per product</p>
+        </div>
+        <div class="module-tile reveal">
+            <span class="emoji">🧰</span>
+            <h4>Materials</h4>
+            <p>Inventory stock & alerts</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-1">
+            <span class="emoji">🚚</span>
+            <h4>Procurement</h4>
+            <p>Purchase orders & supplier deliveries</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-2">
+            <span class="emoji">🤝</span>
+            <h4>Suppliers</h4>
+            <p>Vendor directory & contacts</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-3">
+            <span class="emoji">🧾</span>
+            <h4>Invoices</h4>
+            <p>GST-ready billing documents</p>
+        </div>
+        <div class="module-tile reveal">
+            <span class="emoji">💳</span>
+            <h4>Payments</h4>
+            <p>Receivables & outstanding balances</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-1">
+            <span class="emoji">📈</span>
+            <h4>Analytics</h4>
+            <p>Trends, charts & business insights</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-2">
+            <span class="emoji">🔔</span>
+            <h4>Alerts</h4>
+            <p>Material shortages & deadlines</p>
+        </div>
+        <div class="module-tile reveal reveal-delay-3">
+            <span class="emoji">👤</span>
+            <h4>Order Details</h4>
+            <p>Deep-dive per-order breakdown</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+    <h2 class="reveal">Ready to bring order to<br>your operations?</h2>
+    <p class="reveal">Jump straight into the dashboard and start managing your manufacturing business with clarity.</p>
+    <div class="cta-buttons reveal">
+        <a href="index.html" class="btn-cta-white">
+            Open Dashboard →
+        </a>
+        <a href="#features" class="btn-cta-outline">
+            Explore Features
+        </a>
+    </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-logo">
+        <span>◈</span> OrderCraft
+    </div>
+    <p>© 2026 OrderCraft · Manufacturing Operations Platform</p>
+    <p style="color:#334155; font-size:12px;">Built with ◈ in India</p>
+</footer>
+
+
+<script>
+    // ===== SCROLL REVEAL =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // ===== NAV ACTIVE ON SCROLL =====
+    const navLinks = document.querySelectorAll(".nav-links a");
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        navLinks.forEach(link => {
+            const targetId = link.getAttribute("href").replace("#", "");
+            const section = document.getElementById(targetId);
+            if (section) {
+                const top = section.offsetTop - 100;
+                const bottom = top + section.offsetHeight;
+                link.style.color = (scrollY >= top && scrollY < bottom) ? "#111827" : "";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

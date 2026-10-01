@@ -1,0 +1,44 @@
+/* ================= CSS VARIABLES & DESIGN TOKENS ================= */
+:root {
+    /* Colors */
+    --primary-color: #111827;
+    --primary-hover: #273449;
+    --bg-main: #f5f7fb;
+    --bg-card: #ffffff;
+    --bg-subtle: #f8fafc;
+    --bg-muted: #eef0f3;
+
+    /* Text Colors */
+    --text-primary: #172033;
+    --text-secondary: #7b8494;
+    --text-muted: #8a94a6;
+    --text-nav: #aeb7c7;
+    --text-light: #ffffff;
+
+    /* Status Colors */
+    --status-pending-bg: #fef3c7;
+    --status-pending-text: #a16207;
+    --status-production-bg: #e0e7ff;
+    --status-production-text: #4338ca;
+    --status-completed-bg: #dcfce7;
+    --status-completed-text: #15803d;
+    --status-overdue-bg: #fee2e2;
+    --status-overdue-text: #b91c1c;
+
+    /* Borders */
+    --border-color: #e8ebf0;
+    --border-subtle: #e5e7eb;
+    --border-radius-sm: 6px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+
+    /* Layout */
+    --sidebar-width: 245px;
+    --sidebar-bg: #111827;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.2);
+}

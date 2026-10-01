@@ -1,0 +1,202 @@
+<section class="invoice-page" id="invoicePage">
+
+    <div class="page-heading">
+
+        <div>
+            <p class="small-text">FINANCE</p>
+            <h1>Invoices</h1>
+            <p>Create and manage customer invoices.</p>
+        </div>
+
+        <button class="new-order" id="createInvoiceBtn">
+            + Create Invoice
+        </button>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="detail-cards">
+
+        <div class="detail-card">
+            <p>TOTAL INVOICES</p>
+            <h3>48</h3>
+            <span>This month</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PAID</p>
+            <h3>₹7.2 L</h3>
+            <span>Collected</span>
+        </div>
+
+        <div class="detail-card">
+            <p>PENDING</p>
+            <h3>₹2.1 L</h3>
+            <span>Awaiting payment</span>
+        </div>
+
+        <div class="detail-card">
+            <p>OVERDUE</p>
+            <h3>₹65 K</h3>
+            <span>Needs attention</span>
+        </div>
+
+    </div>
+
+
+    <!-- INVOICE TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Customer Invoices</h2>
+                <p>Billing and payment overview</p>
+            </div>
+
+        </div>
+
+
+        <table id="invoiceTable">
+
+            <thead>
+                <tr>
+                    <th>INVOICE</th>
+                    <th>CUSTOMER</th>
+                    <th>ORDER</th>
+                    <th>AMOUNT</th>
+                    <th>DUE DATE</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>INV-1001</td>
+                    <td>ABC Industries</td>
+                    <td>ORD-1042</td>
+                    <td>₹1,18,000</td>
+                    <td>05 Oct 2026</td>
+                    <td>
+                        <span class="status pending-status">
+                            Pending
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>INV-1002</td>
+                    <td>Tech Solutions</td>
+                    <td>ORD-1040</td>
+                    <td>₹86,500</td>
+                    <td>01 Oct 2026</td>
+                    <td>
+                        <span class="status completed-status">
+                            Paid
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- BILL PREVIEW -->
+
+    <div class="invoice-document" id="invoiceDocument">
+
+        <div class="invoice-top">
+
+            <div>
+                <p class="small-text">ORDERCRAFT</p>
+                <h2>Manufacturing Invoice</h2>
+            </div>
+
+            <div class="invoice-number">
+                <strong>INV-1042</strong>
+                <span>29 Sep 2026</span>
+            </div>
+
+        </div>
+
+
+        <div class="billing-info">
+
+            <div>
+                <p>BILL TO</p>
+                <h3>ABC Industries</h3>
+                <span>New Delhi, India</span>
+            </div>
+
+            <div>
+                <p>ORDER</p>
+                <h3>ORD-1042</h3>
+                <span>Office Chair × 100</span>
+            </div>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>DESCRIPTION</th>
+                    <th>QTY</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Office Chair</td>
+                    <td>100</td>
+                    <td>₹1,000</td>
+                    <td>₹1,00,000</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <div class="invoice-calculation">
+
+            <div>
+                <span>Subtotal</span>
+                <strong>₹1,00,000</strong>
+            </div>
+
+            <div>
+                <span>GST (18%)</span>
+                <strong>₹18,000</strong>
+            </div>
+
+            <div class="grand-total">
+                <span>Grand Total</span>
+                <strong>₹1,18,000</strong>
+            </div>
+
+        </div>
+
+
+        <div class="invoice-actions">
+
+            <button class="new-order" id="printInvoiceBtn">
+                Print / Download Invoice
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

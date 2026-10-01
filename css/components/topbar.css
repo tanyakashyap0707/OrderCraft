@@ -1,0 +1,24 @@
+/* ================= TOPBAR ================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.search {
+    background: white;
+    padding: 11px 18px;
+    width: 300px;
+    border-radius: var(--border-radius-md, 8px);
+    color: var(--text-muted, #8a94a6);
+    font-size: 14px;
+    border: 1px solid var(--border-color, #e8ebf0);
+}
+
+.profile {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    font-size: 14px;
+}

@@ -1,0 +1,75 @@
+/* ================= INVOICE PAGE ================= */
+.invoice-page {
+    display: none;
+}
+
+.invoice-document {
+    background: white;
+    border: 1px solid var(--border-color, #e8ebf0);
+    border-radius: var(--border-radius-xl, 14px);
+    padding: 35px;
+    margin-top: 25px;
+}
+
+.invoice-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-subtle, #e5e7eb);
+}
+
+.invoice-number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.invoice-number span {
+    color: var(--text-muted, #8a94a6);
+    font-size: 12px;
+}
+
+.billing-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 25px 0;
+}
+
+.billing-info p {
+    font-size: 10px;
+    color: var(--text-muted, #8a94a6);
+    letter-spacing: 1px;
+}
+
+.billing-info span {
+    color: var(--text-muted, #8a94a6);
+    font-size: 13px;
+}
+
+.invoice-calculation {
+    margin-left: auto;
+    width: 300px;
+    padding-top: 25px;
+}
+
+.invoice-calculation div {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+}
+
+.grand-total {
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 15px !important;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.invoice-actions {
+    margin-top: 25px;
+    text-align: right;
+}

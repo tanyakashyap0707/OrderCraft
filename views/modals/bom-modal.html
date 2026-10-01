@@ -1,0 +1,59 @@
+<div class="modal" id="bomModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <p class="small-text">MANUFACTURING</p>
+                <h2>Create Bill of Materials</h2>
+            </div>
+
+            <button id="closeBomModal">×</button>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Product Name</label>
+                <input type="text" id="bomProduct"
+                       placeholder="Enter product name">
+            </div>
+
+            <div>
+                <label>Version</label>
+                <input type="text" id="bomVersion"
+                       placeholder="e.g. v1.0">
+            </div>
+
+        </div>
+
+        <h3>Materials Required</h3>
+
+        <div class="material-row">
+
+            <input type="text" id="materialName"
+                   placeholder="Material name">
+
+            <input type="number" id="materialQty"
+                   placeholder="Quantity">
+
+            <select id="materialUnit">
+                <option value="kg">kg</option>
+                <option value="L">L</option>
+                <option value="m">m</option>
+                <option value="pcs">pcs</option>
+            </select>
+
+            <button id="addMaterialBtn">+ Add</button>
+
+        </div>
+
+        <div id="materialList"></div>
+
+        <button class="new-order" id="saveBomBtn">
+            Create BOM
+        </button>
+
+    </div>
+
+</div>
