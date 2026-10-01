@@ -5,17 +5,9 @@
 window.OrderCraft = window.OrderCraft || {};
 
 window.OrderCraft.config = {
-    // Dynamic API Base URL fallback
-    API_BASE_URL: (() => {
-        // If served from backend server port 5000 or similar
-        if (window.location.protocol.startsWith("http")) {
-            if (window.location.port === "5000") {
-                return "/api";
-            }
-        }
-        // Fallback for file:// or other frontend dev ports
-        return "http://localhost:5000/api";
-    })(),
+    // Relative path works on Vercel (shared domain, rewrite routes /api/* to the
+    // api service) and locally when Express serves the frontend on the same port.
+    API_BASE_URL: "/api",
 
     // Request timeout in milliseconds
     REQUEST_TIMEOUT_MS: 10000,
